@@ -1,0 +1,34 @@
+<div class="gpt3__navbar">
+  <div class="gpt3__navbar-links">
+    <div class="gpt3__navbar-links_logo">
+      <img src="assets/logo.svg" alt="">
+    </div>
+    <div class="gpt3__navbar-links_container">
+      <ng-container  *ngFor="let link of links">
+        <p><a [href]="link.href">{{link.label}}</a></p>
+      </ng-container>
+    </div>
+  </div>
+  <div class="gpt3__navbar-sign">
+    <p>Sign in</p>
+    <button type="button">Sign up</button>
+  </div>
+  <div class="gpt3__navbar-menu">
+    <i  [ngClass]="activeMenu ? 'bx bx-x' : 'bx bx-menu'" (click)="toggleMenu()"></i>
+    <ng-container *ngIf="activeMenu">
+      <div class="gpt3__navbar-menu_container scale-up-center">
+        <div class="gpt3__navbar-menu_container-links" >
+          <ng-container *ngFor="let link of links">
+            <p><a [href]="link.href">{{link.label}}</a></p>
+          </ng-container>
+          <div class="gpt3__navbar-menu_container-links-sign">
+            <p>Sign in</p>
+            <button type="button">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+
